@@ -20,7 +20,7 @@ class App extends React.Component {
 
 	componentDidMount() {
         connect.send('VKWebAppGetUserInfo', {});
-        connect.send('VKWebAppGetEmail' {});
+        connect.send('VKWebAppGetEmail', {});
 		connect.subscribe((e) => {
 			switch (e.detail.type) {
 				case 'VKWebAppGetUserInfoResult':
