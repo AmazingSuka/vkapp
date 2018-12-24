@@ -21,7 +21,7 @@ const Home = ({ id, go, fetchedUser, emilo }) => (
 					Hello murafukars
 				</Button>
                 <Button size="xl" level="outline" onClick={go} data-to="email">
-                    Hello emails
+                    Hello
 				</Button>
 			</Div>
 		</Group>
