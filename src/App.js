@@ -26,6 +26,9 @@ class App extends React.Component {
 				case 'VKWebAppGetUserInfoResult':
 					this.setState({ fetchedUser: e.detail.data });
                     break;
+                case 'VKWebAppGetEmailResult':
+                    this.setState({ userMail: e.detail.data });
+                    break;
 				default:
 					console.log(e.detail.type);
 			}
@@ -54,7 +57,7 @@ class App extends React.Component {
             <View activePanel={this.state.activePanel}>
                 <Home id="home" fetchedUser={this.state.fetchedUser} go={this.go}/>
                 <Persik id="persik" go={this.go} />
-                <Email id="email" userEmail={this.state.userMail} go={this.go}/>
+                <Email id="email" userMail={this.state.userMail} go={this.go}/>
 			</View>
 		);
 	}
