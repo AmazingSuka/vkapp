@@ -15,12 +15,11 @@ const Email = props => (
 		>
 			emilo
 		</PanelHeader>
-        {userEmail &&
         <Group>
             <Div>
                 Email here
             </Div>
-        </Group>}
+        </Group>
 	</Panel>
 );
 
