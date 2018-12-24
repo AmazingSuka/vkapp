@@ -6,7 +6,7 @@ import Icon28ChevronBack from '@vkontakte/icons/dist/28/chevron_back';
 import Icon24Back from '@vkontakte/icons/dist/24/back';
 
 const osname = platform();
-var email = null;
+
 const Email = props => (
 	<Panel id={props.id}>
 		<PanelHeader
@@ -16,35 +16,21 @@ const Email = props => (
 		>
 			emilo
 		</PanelHeader>
+        {userMail &&
         <Group>
             <Div>
-                <Div>Email here</Div>
-                <Button level="commerce" onClick={getUserEmail}>Get Email</Button>
+                <Div>Email here {props.userMail.email} heare</Div>
             </Div>
-        </Group>
+        </Group>}
 	</Panel>
 );
-
-
-
-function getUserEmail() {
-    connect.send('VKWebAppGetEmail', {});
-    connect.subscribe((e) => {
-        switch (e.detail.type) {
-            case 'VKWebAppGetEmailResult':
-                email = e.detail.data;
-                console.log(e.detail.data);
-                break;
-            default:
-                console.log(e.detail.type);
-        }
-    });
-    console.log(email);
-};
 
 Email.propTypes = {
     id: PropTypes.string.isRequired,
     go: PropTypes.func.isRequired,
+    userMail: PropTypes.shape({
+        email: PropTypes.string,
+    }),
 };
 
 export default Email;
