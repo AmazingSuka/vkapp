@@ -20,7 +20,7 @@ const Home = ({ id, go, fetchedUser, emilo }) => (
 				<Button size="xl" level="2" onClick={go} data-to="persik">
 					Hello murafukars
 				</Button>
-                <Button size="xl" level="2" onClick={go} data-to="email">
+                <Button size="xl" level="outline" onClick={go} data-to="email">
                     Hello emails
 				</Button>
 			</Div>
