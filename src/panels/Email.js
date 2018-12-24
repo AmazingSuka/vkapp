@@ -16,7 +16,7 @@ const Email = props => (
 		>
 			emilo
 		</PanelHeader>
-        {userMail &&
+        {props.userMail &&
         <Group>
             <Div>
                 <Div>Email here {props.userMail.email} heare</Div>
