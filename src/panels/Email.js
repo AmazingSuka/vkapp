@@ -13,13 +13,12 @@ const Email = props => (
 				{osname === IOS ? <Icon28ChevronBack/> : <Icon24Back/>}
 			</HeaderButton>}
 		>
-			Persik
+			emilo
 		</PanelHeader>
         {userEmail &&
         <Group>
             <Div>
-                {`${userEmail.email}`}
-                Çהוסÿ גûסרו מעמבנמזאועסÿ טל‎וכ
+                Email here
             </Div>
         </Group>}
 	</Panel>
@@ -28,9 +27,6 @@ const Email = props => (
 Email.propTypes = {
     id: PropTypes.string.isRequired,
 	go: PropTypes.func.isRequired,
-    userEmail: PropTypes.shape({
-        email: PropTypes.string,
-    }),
 };
 
 export default Email;
