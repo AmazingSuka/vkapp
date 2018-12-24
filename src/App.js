@@ -31,6 +31,7 @@ class App extends React.Component {
         connect.send('VKWebAppGetUserInfo', {});
 	}
 
+
 	go = (e) => {
 		this.setState({ activePanel: e.currentTarget.dataset.to })
 	};
