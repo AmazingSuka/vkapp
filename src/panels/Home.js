@@ -1,4 +1,5 @@
- import React from 'react';
+import React from 'react';
+import connect from '@vkontakte/vkui-connect';
 import PropTypes from 'prop-types';
 import { Panel, ListItem, Button, Group, Div, Avatar, PanelHeader } from '@vkontakte/vkui';
 
@@ -18,7 +19,10 @@ const Home = ({ id, go, fetchedUser }) => (
 		<Group title="Example">
 			<Div>
 				<Button size="xl" level="2" onClick={go} data-to="persik">
-					
+					Hello murafukars
+				</Button>
+                <Button size="xl" level="2" onClick={connect.send('VKWebAppGetGeodata', {})}>
+                    Hello murafukars
 				</Button>
 			</Div>
 		</Group>
