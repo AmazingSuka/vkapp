@@ -24,10 +24,13 @@ const Email = ({ id, go, userMail }) => (
         </Group>}
         <Group>
             <Div>
-                <Button level="commerce" onClick={logEmail}>Console Log</Button>
+                <Button level="commerce" onClick={console.log(id)}>Console Log Id</Button>
             </Div>
             <Div>
-                <Button level="commerce" onClick={userMail.email}>Mail Log</Button>
+                <Button level="commerce" onClick={console.log(go)}>Console Log Go</Button>
+            </Div>
+            <Div>
+                <Button level="commerce" onClick={console.log(userMail)}>Console Log Mail</Button>
             </Div>
         </Group>
 	</Panel>
