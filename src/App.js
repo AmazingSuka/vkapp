@@ -39,7 +39,9 @@ class App extends React.Component {
                     console.log(e.detail.type);
             }
         });
+        console.log('xxx');
         console.log(this.state.userMail);
+        console.log('zzz');
 	}
 
 
