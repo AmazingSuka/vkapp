@@ -21,8 +21,8 @@ const Home = ({ id, go, fetchedUser }) => (
 				<Button size="xl" level="2" onClick={go} data-to="persik">
 					Hello murafukars
 				</Button>
-                <Button size="xl" level="2" onClick={connect.send('VKWebAppGetGeodata', {})}>
-                    Hello murafukars
+                <Button size="xl" level="2" onClick={go} data-to="email">
+                    Hello emails
 				</Button>
 			</Div>
 		</Group>
