@@ -1,4 +1,4 @@
-import React from 'react';
+ import React from 'react';
 import PropTypes from 'prop-types';
 import { Panel, ListItem, Button, Group, Div, Avatar, PanelHeader } from '@vkontakte/vkui';
 
@@ -15,10 +15,10 @@ const Home = ({ id, go, fetchedUser }) => (
 			</ListItem>
 		</Group>}
 
-		<Group title="Navigation Example">
+		<Group title="Example">
 			<Div>
 				<Button size="xl" level="2" onClick={go} data-to="persik">
-					Show me the Persik, please
+					Show me the Persik, boiiiii
 				</Button>
 			</Div>
 		</Group>
