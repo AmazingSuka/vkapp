@@ -8,7 +8,6 @@ import App from './App';
 
 // Init VK App
 connect.send('VKWebAppInit', {});
-connect.send('VKWebAppGetGeodata', {})
 
 // Если вы хотите, чтобы ваше веб-приложение работало в оффлайне и загружалось быстрее,
 // расскомментируйте строку с registerServiceWorker();

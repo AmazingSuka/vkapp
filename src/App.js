@@ -28,17 +28,7 @@ class App extends React.Component {
 					console.log(e.detail.type);
 			}
         });
-        connect.subscribe((e) => {
-            switch (e.detail.type) {
-                case 'VKWebAppGetEmailResult':
-                    this.setState({ userEmail: e.detail.data });
-                    break;
-                default:
-                    console.log(e.detail.type);
-            }
-        });
         connect.send('VKWebAppGetUserInfo', {});
-        connect.send('VKWebAppGetEmail', {});
 	}
 
 	go = (e) => {
@@ -48,7 +38,7 @@ class App extends React.Component {
 	render() {
 		return (
             <View activePanel={this.state.activePanel}>
-                <Home id="home" fetchedUser={this.state.fetchedUser} go={this.go} emilo={this.state.userEmail} />
+                <Home id="home" fetchedUser={this.state.fetchedUser} go={this.go}/>
                 <Persik id="persik" go={this.go} />
                 <Email id="email" userEmail={this.state.userEmail} go={this.go}/>
 			</View>

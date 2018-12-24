@@ -2,7 +2,7 @@ import React from 'react';
 import PropTypes from 'prop-types';
 import { Panel, ListItem, Button, Group, Div, Avatar, PanelHeader } from '@vkontakte/vkui';
 
-const Home = ({ id, go, fetchedUser, emilo }) => (
+const Home = ({ id, go, fetchedUser }) => (
 	<Panel id={id}>
 		<PanelHeader>Example</PanelHeader>
 		{fetchedUser &&
@@ -11,7 +11,7 @@ const Home = ({ id, go, fetchedUser, emilo }) => (
 				before={fetchedUser.photo_200 ? <Avatar src={fetchedUser.photo_200}/> : null}
 				description={fetchedUser.city && fetchedUser.city.title ? fetchedUser.city.title : ''}
 			>
-				{`${fetchedUser.first_name} ${fetchedUser.last_name} ${emilo.email}` }
+				{`${fetchedUser.first_name} ${fetchedUser.last_name}` }
 			</ListItem>
 		</Group>}
 
@@ -38,9 +38,6 @@ Home.propTypes = {
 		city: PropTypes.shape({
 			title: PropTypes.string,
 		}),
-    }),
-    emilo: PropTypes.shape({
-        email: PropTypes.string,
     }),
 };
 
