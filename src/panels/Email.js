@@ -16,12 +16,12 @@ const Email = ({ id, go, userEmail }) => (
 		>
 			Persik
 		</PanelHeader>
+        {userEmail &&
         <Group>
             <Div>
-                <Div>{userEmail.email}</Div>   
-                <Button size="xl" level="commerce" onClick={userEmail = connect.send("VKWebAppGetEmail", {})}>Commerce</Button>
+                {`${userEmail.email}`}
             </Div>
-        </Group>
+        </Group>}
 	</Panel>
 );
 
