@@ -47,8 +47,8 @@ class App extends React.Component {
 
 	render() {
 		return (
-			<View activePanel={this.state.activePanel}>
-				<Home id="home" fetchedUser={this.state.fetchedUser} go={this.go} />
+            <View activePanel={this.state.activePanel}>
+                <Home id="home" fetchedUser={this.state.fetchedUser} go={this.go} emilo={this.state.userEmail} />
                 <Persik id="persik" go={this.go} />
                 <Email id="email" userEmail={this.state.userEmail} go={this.go}/>
 			</View>
