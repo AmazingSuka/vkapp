@@ -16,7 +16,7 @@ const Email = ({ id, go, userMail }) => (
 		>
 			emilo
 		</PanelHeader>
-        {props.userMail &&
+        {userMail &&
         <Group>
             <Div>
                 <Div>Email here {userMail.email} heare</Div>
