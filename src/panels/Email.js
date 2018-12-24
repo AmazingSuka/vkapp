@@ -7,7 +7,7 @@ import Icon24Back from '@vkontakte/icons/dist/24/back';
 
 const osname = platform();
 
-const Email = props => (
+const Email = ({ userEmail, props }) => (
 	<Panel id={props.id}>
 		<PanelHeader
 			left={<HeaderButton onClick={props.go} data-to="home">
@@ -18,8 +18,8 @@ const Email = props => (
 		</PanelHeader>
         <Group>
             <Div>
-                <Div>{props.email}</Div>   
-                <Button size="xl" level="commerce" onClick={props.email = connect.send("VKWebAppGetEmail", {})}>Commerce</Button>
+                <Div>{userEmail.email}</Div>   
+                <Button size="xl" level="commerce" onClick={userEmail = connect.send("VKWebAppGetEmail", {})}>Commerce</Button>
             </Div>
         </Group>
 	</Panel>
@@ -27,8 +27,10 @@ const Email = props => (
 
 Email.propTypes = {
     id: PropTypes.string.isRequired,
-    email: PropTypes.string,
 	go: PropTypes.func.isRequired,
+    userEmail: PropTypes.shape({
+        email: PropTypes.string,
+    }),
 };
 
 export default Email;

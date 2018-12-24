@@ -1,5 +1,4 @@
 import React from 'react';
-import connect from '@vkontakte/vkui-connect';
 import PropTypes from 'prop-types';
 import { Panel, ListItem, Button, Group, Div, Avatar, PanelHeader } from '@vkontakte/vkui';
 
