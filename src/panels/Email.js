@@ -22,8 +22,19 @@ const Email = ({ id, go, userMail }) => (
                 <Div>Email here {userMail.email} heare</Div>
             </Div>
         </Group>}
+        <Group>
+            <Div>
+                <Button level="commerce" onClick={logEmail}>Console Log</Button>
+            </Div>
+        </Group>
 	</Panel>
 );
+
+function logEmail() {
+    console.log('yxy');
+    console.log(userMail.email);
+    console.log('xyx');
+}
 
 Email.propTypes = {
     id: PropTypes.string.isRequired,
