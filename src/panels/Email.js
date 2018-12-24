@@ -7,10 +7,10 @@ import Icon24Back from '@vkontakte/icons/dist/24/back';
 
 const osname = platform();
 
-const Email = props => (
-	<Panel id={props.id}>
+const Email = ({ id, go, userMail }) => (
+	<Panel id={id}>
 		<PanelHeader
-			left={<HeaderButton onClick={props.go} data-to="home">
+			left={<HeaderButton onClick={go} data-to="home">
 				{osname === IOS ? <Icon28ChevronBack/> : <Icon24Back/>}
 			</HeaderButton>}
 		>
@@ -19,7 +19,7 @@ const Email = props => (
         {props.userMail &&
         <Group>
             <Div>
-                <Div>Email here {props.userMail.email} heare</Div>
+                <Div>Email here {userMail.email} heare</Div>
             </Div>
         </Group>}
 	</Panel>
