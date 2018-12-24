@@ -1,16 +1,15 @@
 import React from 'react';
 import PropTypes from 'prop-types';
-import connect from '@vkontakte/vkui-connect';
-import {Panel, Group, Button, Div, PanelHeader, HeaderButton, platform, IOS} from '@vkontakte/vkui';
+import {Panel, Group, Div, PanelHeader, HeaderButton, platform, IOS} from '@vkontakte/vkui';
 import Icon28ChevronBack from '@vkontakte/icons/dist/28/chevron_back';
 import Icon24Back from '@vkontakte/icons/dist/24/back';
 
 const osname = platform();
 
-const Email = ({ id, go, userEmail }) => (
-	<Panel id={id}>
+const Email = props => (
+	<Panel id={props.id}>
 		<PanelHeader
-			left={<HeaderButton onClick={go} data-to="home">
+			left={<HeaderButton onClick={props.go} data-to="home">
 				{osname === IOS ? <Icon28ChevronBack/> : <Icon24Back/>}
 			</HeaderButton>}
 		>
@@ -20,6 +19,7 @@ const Email = ({ id, go, userEmail }) => (
         <Group>
             <Div>
                 {`${userEmail.email}`}
+                Çהוסÿ גûסרו מעמבנמזאועסÿ טל‎וכ
             </Div>
         </Group>}
 	</Panel>
