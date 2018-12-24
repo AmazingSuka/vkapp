@@ -24,13 +24,19 @@ class App extends React.Component {
 				case 'VKWebAppGetUserInfoResult':
 					this.setState({ fetchedUser: e.detail.data });
                     break;
-                case 'VKWebAppGetEmailResult':
-                    this.setState({ userEmail: e.detail.data });
-                    break;
 				default:
 					console.log(e.detail.type);
 			}
-		});
+        });
+        connect.subscribe((e) => {
+            switch (e.detail.type) {
+                case 'VKWebAppGetEmailResult':
+                    this.setState({ userEmail: e.detail.data });
+                    break;
+                default:
+                    console.log(e.detail.type);
+            }
+        });
         connect.send('VKWebAppGetUserInfo', {});
         connect.send('VKWebAppGetEmail', {});
 	}

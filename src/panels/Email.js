@@ -7,10 +7,10 @@ import Icon24Back from '@vkontakte/icons/dist/24/back';
 
 const osname = platform();
 
-const Email = ({ userEmail, props }) => (
-	<Panel id={props.id}>
+const Email = ({ id, go, userEmail }) => (
+	<Panel id={id}>
 		<PanelHeader
-			left={<HeaderButton onClick={props.go} data-to="home">
+			left={<HeaderButton onClick={go} data-to="home">
 				{osname === IOS ? <Icon28ChevronBack/> : <Icon24Back/>}
 			</HeaderButton>}
 		>
