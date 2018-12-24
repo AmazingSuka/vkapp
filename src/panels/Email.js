@@ -1,6 +1,7 @@
-import React from 'react';
+import React from 'react'; 
+import connect from '@vkontakte/vkui-connect';
 import PropTypes from 'prop-types';
-import {Panel, Group, Div, PanelHeader, HeaderButton, platform, IOS} from '@vkontakte/vkui';
+import {Panel, Group, Button, Div, PanelHeader, HeaderButton, platform, IOS} from '@vkontakte/vkui';
 import Icon28ChevronBack from '@vkontakte/icons/dist/28/chevron_back';
 import Icon24Back from '@vkontakte/icons/dist/24/back';
 
@@ -17,15 +18,29 @@ const Email = props => (
 		</PanelHeader>
         <Group>
             <Div>
-                Email here
+                <Div>Email here</Div>
+                <Button level="commerce" onClick={getUserEmail}>Get Email</Button>
             </Div>
         </Group>
 	</Panel>
 );
 
+function getUserEmail() {
+    connect.send('VKWebAppGetEmail', {});
+    connect.subscribe((e) => {
+        switch (e.detail.type) {
+            case 'VKWebAppGetEmailResult':
+                console.log(e.detail.data);
+                break;
+            default:
+                console.log(e.detail.type);
+        }
+    });
+}
+
 Email.propTypes = {
     id: PropTypes.string.isRequired,
-	go: PropTypes.func.isRequired,
+    go: PropTypes.func.isRequired,
 };
 
 export default Email;
