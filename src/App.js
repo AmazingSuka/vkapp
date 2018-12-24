@@ -42,16 +42,7 @@ class App extends React.Component {
                     console.log(e.detail.type);
             }
         });
-        console.log('xxx');
-        console.log(this.state.userMail);
-        console.log('zzz');
 	}
-    
-    logEmail() {
-        console.log('yxy');
-        console.log(userMail.email);
-        console.log('xyx');
-    }
 
 	go = (e) => {
 		this.setState({ activePanel: e.currentTarget.dataset.to })
