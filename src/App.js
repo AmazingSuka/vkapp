@@ -7,12 +7,15 @@ import Home from './panels/Home';
 import Persik from './panels/Persik';
 import Email from './panels/Email'
 
+const Sequelize = require('sequelize');
+
 class App extends React.Component {
 	constructor(props) {
 		super(props);
 
 		this.state = {
-			activePanel: 'home',
+            activePanel: 'home',
+
             fetchedUser: null,
             userMail: null,
 		};
