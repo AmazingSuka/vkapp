@@ -5,7 +5,8 @@ import '@vkontakte/vkui/dist/vkui.css';
 import Home from './panels/Home';
 import Persik from './panels/Persik';
 import Email from './panels/Email'
-import {Sequelize} from "sequelize";
+
+const Sequelize = require('sequelize');
 
 class App extends React.Component {
 	constructor(props) {
