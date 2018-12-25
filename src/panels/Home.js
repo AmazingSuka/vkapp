@@ -21,7 +21,7 @@ const Home = ({ id, go, fetchedUser }) => (
 				<Button size="xl" level="2" onClick={go} data-to="persik">
 					Hello murafukars
 				</Button>
-                <Button size="xl" level="outline" onClick={App.seq_check()} data-to="email">
+                <Button size="xl" level="outline" onClick={go} data-to="email">
                     Hello from sequelize
 				</Button>
 			</Div>
