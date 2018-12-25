@@ -15,7 +15,7 @@ const Home = ({ id, go, fetchedUser }) => (
 			</ListItem>
 		</Group>}
 
-		<Group title="Example v4">
+		<Group title="Example v5">
 			<Div>
 				<Button size="xl" level="2" onClick={go} data-to="persik">
 					Hello murafukars

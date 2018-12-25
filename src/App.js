@@ -33,15 +33,15 @@ class App extends React.Component {
 					console.log(e.detail.type);
 			}
         });
-        connect.subscribe((e) => {
-            switch (e.detail.type) {
-                case 'VKWebAppGetEmailResult':
-                    this.setState({ userMail: e.detail.data });
-                    break;
-                default:
-                    console.log(e.detail.type);
-            }
-        });
+        //connect.subscribe((e) => { 
+        //    switch (e.detail.type) {
+        //        case 'VKWebAppGetEmailResult':
+        //            this.setState({ userMail: e.detail.data });
+        //            break;
+        //        default:
+        //            console.log(e.detail.type);
+        //    }
+        //});
 	}
 
 	go = (e) => {
