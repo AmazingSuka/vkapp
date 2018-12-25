@@ -24,17 +24,13 @@ const Email = ({ id, go, userMail }) => (
         </Group>}
         <Group>
             <Div>
-                <Button level="commerce" onClick={go} data-to="persik">GO 1</Button>
-            </Div>
-            <Div>
-                <Button level="commerce" onClick={console.log(`eto onclick second button`)}>Console Log Go</Button>
-            </Div>
-            <Div>
-                <Button level="commerce" onClick={console.log(`eto onclick third button`)}>Console Log Mail</Button>
+                <Button level="commerce" onClick={go} data-to="persik">GO persik</Button>
             </Div>
         </Group>
 	</Panel>
 );
+
+
 
 Email.propTypes = {
     id: PropTypes.string.isRequired,
