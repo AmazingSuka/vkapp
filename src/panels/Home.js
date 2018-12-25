@@ -3,7 +3,7 @@ import PropTypes from 'prop-types';
 import { Panel, ListItem, Button, Group, Div, Avatar, PanelHeader } from '@vkontakte/vkui';
 import App from "../App";
 
-const Home = ({ id, go, fetchedUser, sequelize }) => (
+const Home = ({ id, go, fetchedUser }) => (
 	<Panel id={id}>
 		<PanelHeader>Example</PanelHeader>
 		{fetchedUser &&

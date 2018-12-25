@@ -22,6 +22,7 @@ class App extends React.Component {
 			}),
 		};
 	}
+	
 	static seq_check(){
 		return this.state.sequelize
 			.authenticate()
@@ -56,7 +57,7 @@ class App extends React.Component {
 	render() {
 		return (
             <View activePanel={this.state.activePanel}>
-                <Home id="home" fetchedUser={this.state.fetchedUser} sequelize={this.state.sequelize} go={this.go}/>
+                <Home id="home" fetchedUser={this.state.fetchedUser} go={this.go}/>
                 <Persik id="persik" go={this.go} />
                 <Email id="email" userMail={this.state.userMail} go={this.go} />
 			</View>
