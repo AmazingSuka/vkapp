@@ -22,7 +22,7 @@ class App extends React.Component {
 			}),
 		};
 	}
-	
+
 	static seq_check(){
 		return this.state.sequelize
 			.authenticate()
