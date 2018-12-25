@@ -1,8 +1,9 @@
 import React from 'react';
 import PropTypes from 'prop-types';
 import { Panel, ListItem, Button, Group, Div, Avatar, PanelHeader } from '@vkontakte/vkui';
+import App from "../App";
 
-const Home = ({ id, go, fetchedUser }) => (
+const Home = ({ id, go, fetchedUser, sequelize }) => (
 	<Panel id={id}>
 		<PanelHeader>Example</PanelHeader>
 		{fetchedUser &&
@@ -20,13 +21,14 @@ const Home = ({ id, go, fetchedUser }) => (
 				<Button size="xl" level="2" onClick={go} data-to="persik">
 					Hello murafukars
 				</Button>
-                <Button size="xl" level="outline" onClick={go} data-to="email">
-                    Hello bruda
+                <Button size="xl" level="outline" onClick={App.seq_check()} data-to="email">
+                    Hello from sequelize
 				</Button>
 			</Div>
 		</Group>
 	</Panel>
 );
+
 
 Home.propTypes = {
 	id: PropTypes.string.isRequired,

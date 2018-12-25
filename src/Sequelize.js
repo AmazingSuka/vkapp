@@ -1,11 +1,5 @@
 const Sequelize = require('sequelize');
 
-const sequelize = new Sequelize('cotopesDb', 'root', 'qwertyAhuel', {
-    host: 'cotopesinstance.cmdc44d5brv4.us-east-2.rds.amazonaws.com',
-    dialect: 'postgres',
-    ssl: true,
-});
-
 sequelize
     .authenticate()
     .then(() => {

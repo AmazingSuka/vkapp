@@ -2,10 +2,11 @@ import React from 'react';
 import connect from '@vkontakte/vkui-connect';
 import { View } from '@vkontakte/vkui';
 import '@vkontakte/vkui/dist/vkui.css';
-
 import Home from './panels/Home';
 import Persik from './panels/Persik';
 import Email from './panels/Email'
+
+const Sequelize = require('sequelize');
 
 class App extends React.Component {
 	constructor(props) {
@@ -13,13 +14,25 @@ class App extends React.Component {
 
 		this.state = {
             activePanel: 'home',
-
             fetchedUser: null,
             userMail: null,
+			sequelize: new Sequelize('cotopesDb', 'root', 'qwertyAhuel', {
+				host: 'cotopesinstance.cmdc44d5brv4.us-east-2.rds.amazonaws.com',
+				dialect: 'postgres',
+				ssl: true,
+			}),
 		};
 	}
-
-
+	static seq_check(){
+		return this.state.sequelize
+			.authenticate()
+			.then(() => {
+				console.log('Connection has been established successfully.');
+			})
+			.catch(err => {
+				console.error('Unable to connect to the database:', err);
+			});
+	}
 	componentDidMount() {
         connect.send('VKWebAppGetUserInfo', {});
         connect.send('VKWebAppGetEmail', {});
@@ -44,7 +57,7 @@ class App extends React.Component {
 	render() {
 		return (
             <View activePanel={this.state.activePanel}>
-                <Home id="home" fetchedUser={this.state.fetchedUser} go={this.go}/>
+                <Home id="home" fetchedUser={this.state.fetchedUser} sequelize={this.state.sequelize} go={this.go}/>
                 <Persik id="persik" go={this.go} />
                 <Email id="email" userMail={this.state.userMail} go={this.go} />
 			</View>
