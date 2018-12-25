@@ -7,6 +7,8 @@ import App from './App';
 // import registerServiceWorker from './sw';
 
 // Init VK App
+const pg = require('pg');
+delete pg.native;
 connect.send('VKWebAppInit', {});
 
 // Если вы хотите, чтобы ваше веб-приложение работало в оффлайне и загружалось быстрее,
@@ -15,4 +17,4 @@ connect.send('VKWebAppInit', {});
 // Подробнее про сервис воркеры можно почитать тут — https://vk.cc/8MHpmT 
 // registerServiceWorker();
 
-ReactDOM.render(<App />, document.getElementById('root'));
+ReactDOM.render(<App/>, document.getElementById('root'));
