@@ -24,7 +24,7 @@ const Email = ({ id, go, userMail }) => (
         </Group>}
         <Group>
             <Div>
-                <Button level="commerce" onClick={console.log(`eto onclick first button`)}>Console Log Id</Button>
+                <Button level="commerce" onClick={go} data-to="persik">GO 1</Button>
             </Div>
             <Div>
                 <Button level="commerce" onClick={console.log(`eto onclick second button`)}>Console Log Go</Button>
