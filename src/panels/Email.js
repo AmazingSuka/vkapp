@@ -24,13 +24,13 @@ const Email = ({ id, go, userMail }) => (
         </Group>}
         <Group>
             <Div>
-                <Button level="commerce" onClick={console.log(id)}>Console Log Id</Button>
+                <Button level="commerce" onClick={console.log(`eto onclick first button`)}>Console Log Id</Button>
             </Div>
             <Div>
-                <Button level="commerce" onClick={console.log(go)}>Console Log Go</Button>
+                <Button level="commerce" onClick={console.log(`eto onclick second button`)}>Console Log Go</Button>
             </Div>
             <Div>
-                <Button level="commerce" onClick={console.log(userMail)}>Console Log Mail</Button>
+                <Button level="commerce" onClick={console.log(`eto onclick third button`)}>Console Log Mail</Button>
             </Div>
         </Group>
 	</Panel>
