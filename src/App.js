@@ -18,6 +18,8 @@ class App extends React.Component {
 		};
 	}
 
+
+    
 	componentDidMount() {
         connect.send('VKWebAppGetUserInfo', {});
         connect.send('VKWebAppGetEmail', {});
@@ -33,17 +35,8 @@ class App extends React.Component {
 					console.log(e.detail.type);
 			}
         });
-        //connect.subscribe((e) => { 
-        //    switch (e.detail.type) {
-        //        case 'VKWebAppGetEmailResult':
-        //            this.setState({ userMail: e.detail.data });
-        //            break;
-        //        default:
-        //            console.log(e.detail.type);
-        //    }
-        //});
 	}
-
+   
 	go = (e) => {
 		this.setState({ activePanel: e.currentTarget.dataset.to })
 	};
@@ -53,7 +46,7 @@ class App extends React.Component {
             <View activePanel={this.state.activePanel}>
                 <Home id="home" fetchedUser={this.state.fetchedUser} go={this.go}/>
                 <Persik id="persik" go={this.go} />
-                <Email id="email" userMail={this.state.userMail} go={this.go}/>
+                <Email id="email" userMail={this.state.userMail} go={this.go} />
 			</View>
 		);
 	}
