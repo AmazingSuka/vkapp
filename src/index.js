@@ -9,6 +9,20 @@ import App from './App';
 // Init VK App
 connect.send('VKWebAppInit', {});
 
+const { Pool } = require('pg');
+const config = {
+    user: 'root',
+    database: 'cotopesDb',
+    password: 'qwertyAhuel',
+    host: 'cotopesinstance.cmdc44d5brv4.us-east-2.rds.amazonaws.com',
+    port: 5432,
+    max: 10,
+};
+const pool = new Pool(config);
+pool.on('error', function (err, client) {
+    console.error('idle client error', err.message, err.stack);
+});
+
 // Если вы хотите, чтобы ваше веб-приложение работало в оффлайне и загружалось быстрее,
 // расскомментируйте строку с registerServiceWorker();
 // Но не забывайте, что на данный момент у технологии есть достаточно подводных камней
